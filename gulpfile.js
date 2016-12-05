@@ -13,21 +13,22 @@ gulp.task('comprimir-css', function() {
 });
 
 //Tarea para comprimir archivos js
-gulp.task('compress-js', function (cb) {  
+gulp.task('comprimir-js', function (cb) {  
  pump([
   gulp.src('js/*.js'), //Ruta de la carpeta apuntando a los archivos `.js`
   uglify(), //Comprime los archivos `.js`
   gulp.dest('dist')//Carpeta donde se guardara el archivo `.js` comprimido
    ],
     cb
-  );
+  )
+ .pipe(notify("Tarea comprimir-js terminada!")); //Mensaje gracias al plugin `gulp-notify`
 });
 
 //Vuelve a ejecutar la tarea cuando se modifica algún archivo 
 gulp.task('watch', function(){  
  gulp.watch('./css/**/*', ['comprimir-css']);
- gulp.watch('./js/**/*', ['compress-js']);
+ gulp.watch('./js/**/*', ['comprimir-js']);
 });
 
 //Tarea por defecto
-gulp.task('default',['watch', 'comprimir-css', 'compress-js']);  
+gulp.task('default',['watch', 'comprimir-css', 'comprimir-js']);  
