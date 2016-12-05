@@ -1,0 +1,23 @@
+blockquote{
+	border-left: 5px solid #595858;
+	padding: 1em;
+}
+header, main, footer{
+  margin: 0 auto;
+  padding: 1em;
+  width: 80%;
+}
+header{
+  background: #5EAEFF;
+}
+main{
+  background: #fefefe;
+}
+
+footer{
+  background: #292929;
+  text-align: center;
+}
+footer, footer a{
+  color: #fff;
+}
